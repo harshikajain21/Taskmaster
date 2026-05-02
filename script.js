@@ -14,15 +14,12 @@ function fetchTodos() {
     .then(function (response) {
       return response.json();
     })
-   .then(function (data) {
-  // Force every todo to be unticked
-  for (let i = 0; i < data.length; i++) {
-    data[i].completed = false;
-  }
+  .then(function (data) {
   todos = data;
   loader.classList.add("hidden");
   renderTodos();
 })
+
 
     .catch(function (error) {
       loader.innerHTML = "<p>Error loading todos.</p>";
