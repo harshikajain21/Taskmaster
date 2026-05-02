@@ -1,8 +1,7 @@
-// Global variables
+
 let todos = [];
 let currentFilter = "all";
 
-// Get elements
 const loader = document.getElementById("loader");
 const todoList = document.getElementById("todoList");
 const addBtn = document.getElementById("addBtn");
@@ -10,7 +9,6 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
 
-// Fetch todos from API
 function fetchTodos() {
   fetch("https://jsonplaceholder.typicode.com/todos")
     .then(function (response) {
@@ -27,7 +25,6 @@ function fetchTodos() {
     });
 }
 
-// Render todos based on current filter
 function renderTodos() {
   todoList.innerHTML = "";
 
@@ -74,7 +71,6 @@ function renderTodos() {
   updateProgress();
 }
 
-// Toggle completed status
 function toggleTodo(id) {
   for (let i = 0; i < todos.length; i++) {
     if (todos[i].id === id) {
@@ -85,7 +81,6 @@ function toggleTodo(id) {
   renderTodos();
 }
 
-// Add a new todo (fixed title)
 function addTodo() {
   const newTodo = {
     userId: 1,
@@ -97,7 +92,6 @@ function addTodo() {
   renderTodos();
 }
 
-// Update progress bar
 function updateProgress() {
   const total = todos.length;
   let completedCount = 0;
@@ -109,7 +103,6 @@ function updateProgress() {
   progressFill.style.width = percent + "%";
 }
 
-// Filter button clicks
 filterBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     filterBtns.forEach(function (b) { b.classList.remove("active"); });
@@ -119,8 +112,6 @@ filterBtns.forEach(function (btn) {
   });
 });
 
-// Add button click
 addBtn.addEventListener("click", addTodo);
 
-// Start
 fetchTodos();
