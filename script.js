@@ -86,16 +86,27 @@ function toggleTodo(id) {
   renderTodos();
 }
 
+// Add a new todo (typed by user)
 function addTodo() {
+  const input = document.getElementById("todoInput");
+  const text = input.value.trim();
+
+  if (text === "") {
+    alert("Please type a todo first!");
+    return;
+  }
+
   const newTodo = {
     userId: 1,
     id: todos.length + 1,
-    title: "Fixed Task",
+    title: text,
     completed: false
   };
   todos.unshift(newTodo);
+  input.value = ""; // clear the input box
   renderTodos();
 }
+
 
 function updateProgress() {
   const total = todos.length;
