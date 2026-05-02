@@ -121,8 +121,16 @@ h1 {
 .hidden {
   display: none;
 }
+#todoInput {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 8px;
+  width: 60%;
+}
 
-/* Todo card */
+
 .todo-card {
   display: flex;
   align-items: center;
