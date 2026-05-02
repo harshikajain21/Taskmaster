@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Todo List</h1>
+
+    <!-- Filter buttons -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="incomplete">Incomplete</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <!-- Add todo button -->
+    <div class="add-section">
+      <button id="addBtn">+ Add Todo</button>
+    </div>
+
+    <!-- Progress -->
+    <p id="progressText">Completed: 0 / 0 (0%)</p>
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <p>Loading todos...</p>
+    </div>
+
+    <!-- Todo list -->
+    <div id="todoList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
